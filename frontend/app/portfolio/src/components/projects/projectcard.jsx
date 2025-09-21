@@ -59,16 +59,16 @@ function ProjectCard({ proj, handleViewMore }) {
     </Card>
   );
 }
-function ProjectCardMoreInfo({ proj, onClose }) {
+function ProjectCardMoreInfo({ proj }) {
   return (
     <Card
-      onClick={(e) => e.stopPropagation()}
       style={{
         position: "fixed",
         width: "100%",
         maxWidth: 800,
         overflowY: "auto",
         maxHeight: "calc(100vh - 40px)",
+        cursor: "pointer"
       }}
       layout
       layoutId={proj.id}
@@ -114,9 +114,6 @@ function ProjectCardMoreInfo({ proj, onClose }) {
             ))}
           </Box>
         </CardContent>
-        <CardActions>
-          <Button onClick={onClose}>Close</Button>
-        </CardActions>
       </Paper>
     </Card>
   );

@@ -34,7 +34,6 @@ function Projects() {
           {id && (
             <ProjectCardMoreInfo
               proj={projectsInfo.find((p) => p.id === id)}
-              onClose={onClose}
             />
           )}
         </Backdrop>
