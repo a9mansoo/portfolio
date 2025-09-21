@@ -22,7 +22,7 @@ export default function CustomizedTimeline() {
         gap: 2,
         alignItems: "center",
         textAlign: "center",
-        mt: 5,
+        mt: 12,
       }}
     >
       <Typography variant="h4" sx={{ ml: 4 }}>

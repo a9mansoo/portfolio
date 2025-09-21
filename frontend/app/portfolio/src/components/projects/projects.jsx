@@ -42,7 +42,7 @@ function Projects() {
           display: "flex",
           flexDirection: "column",
           gap: 2,
-          mt: 5,
+          mt: 12,
           textAlign: "center",
         }}
       >

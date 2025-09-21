@@ -6,16 +6,17 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Tooltip from "@mui/material/Tooltip";
 import { Link } from "react-router";
+import { motion } from "motion/react";
 
-function PageMenu() {
+function PageMenu({ positionY }) {
   const menuItems = [
-    { label: "Home", link: "/home" },
-    { label: "Career", link: "/career" },
-    { label: "Projects", link: "/projects" },
+    { id: 1, label: "Home", link: "/home" },
+    { id: 2, label: "Career", link: "/career" },
+    { id: 3, label: "Projects", link: "/projects" },
   ];
 
   return (
-    <AppBar position="static">
+    <AppBar position="fixed" component={motion.div} animate={{y: positionY}} transition={{duration: 0.5, type: "easeIn"}}>
       <Toolbar disableGutters>
         <MenuList>
           <Box sx={{ display: "flex", flexDirection: "row" }}>
@@ -23,6 +24,7 @@ function PageMenu() {
               <Link
                 to={item.link}
                 style={{ textDecoration: "none", color: "inherit" }}
+                key={item.id}
               >
                 <MenuItem>
                   <Tooltip title={item.label}>

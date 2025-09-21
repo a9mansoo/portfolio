@@ -11,6 +11,7 @@ function Home() {
         justifyContent: "flex-start",
         minHeight: "100vh",
         gap: 2,
+        mt: 5,
       }}
     >
       <Box
