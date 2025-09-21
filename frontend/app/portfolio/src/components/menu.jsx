@@ -25,7 +25,9 @@ function PageMenu() {
                 style={{ textDecoration: "none", color: "inherit" }}
               >
                 <MenuItem>
-                  <Typography>{item.label}</Typography>
+                  <Tooltip title={item.label}>
+                    <Typography>{item.label}</Typography>
+                  </Tooltip>
                 </MenuItem>
               </Link>
             ))}
@@ -34,14 +36,18 @@ function PageMenu() {
 
         <Box sx={{ ml: "auto", mr: "5px" }}>
           <Tooltip title="Github">
-            <IconButton>
-              <GitHubIcon />
-            </IconButton>
+            <a href="https://github.com/a9mansoo" target="_blank">
+              <IconButton>
+                <GitHubIcon />
+              </IconButton>
+            </a>
           </Tooltip>
           <Tooltip title="LinkedIn">
-            <IconButton>
-              <LinkedInIcon />
-            </IconButton>
+            <a href="https://www.linkedin.com/in/ayaan-m27/" target="_blank">
+              <IconButton>
+                <LinkedInIcon />
+              </IconButton>
+            </a>
           </Tooltip>
         </Box>
       </Toolbar>

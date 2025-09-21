@@ -28,7 +28,7 @@ function Projects() {
               zIndex: 1300
             }}
           >
-           {id && (   
+           {id && (
               <ProjectCardMoreInfo
                 proj={projectsInfo.find((p) => p.id === id)}
                 onClose={onClose}
