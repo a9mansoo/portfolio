@@ -11,7 +11,7 @@ function Home() {
         justifyContent: "flex-start",
         minHeight: "100vh",
         gap: 2,
-        mt: 5,
+        mt: 12,
       }}
     >
       <Box
@@ -20,7 +20,6 @@ function Home() {
           flexDirection: "column",
           alignItems: "center",
           gap: 2,
-          pt: "15vh",
         }}
       >
         <Typography variant="h3">
