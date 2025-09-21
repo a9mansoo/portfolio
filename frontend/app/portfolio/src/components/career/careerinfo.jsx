@@ -5,7 +5,7 @@ export const careerInfo = [
     title: "University of Waterloo",
     icon: "School",
     subtitle: "Bachelors of Mathematics",
-    chips: [],
+    subtitle_2: ""
   },
   {
     id: 1,
@@ -13,7 +13,7 @@ export const careerInfo = [
     title: "DevOps Engineer",
     icon: "Settings",
     subtitle: "OpenText",
-    chips: ["k8s", "GCP", "Docker", "Helm", "Bash", "Python"],
+    subtitle_2: "Automated cloud deployments in GCP."
   },
   {
     id: 2,
@@ -21,26 +21,15 @@ export const careerInfo = [
     title: "QA Automation Engineer",
     icon: "SmartToy",
     subtitle: "Imagine Communications",
-    chips: ["Websockets", "RESTApi", "Postman", "Python"],
+    subtitle_2: "Developed test automation scripts."
   },
   {
     id: 3,
     date: "Oct 2021 - Dec 2024",
-    title: "Software Developer Engineer in Test",
+    title: "SDET - Automation Tooling & DevOps Work",
     icon: "PrecisionManufacturing",
     subtitle: "Christie Digital Systems",
-    chips: [
-      "Flask",
-      "Python",
-      "Jenkins",
-      "CI/CD",
-      "Docker",
-      "React",
-      "Gitlab",
-      "Ansible",
-      "SQL",
-      "Pytest",
-    ],
+    subtitle_2: "Developed web apps, CI/CD tooling, and testing frameworks."
   },
   {
     id: 4,
@@ -48,15 +37,6 @@ export const careerInfo = [
     title: "Software Developer Engineer in Test",
     icon: "ElectricCar",
     subtitle: "Ford Motors",
-    chips: [
-      "Groovy",
-      "CI/CD",
-      "Python",
-      "Ansible",
-      "Bash",
-      "Powershell",
-      "Click",
-      "SQL",
-    ],
+    subtitle_2: "Developed automation frameworks, CI/CD tooling, and internal libraries."
   },
 ];

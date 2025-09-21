@@ -75,6 +75,7 @@ export default function CustomizedTimeline() {
                       {item.title}
                     </Typography>
                     <Typography>{item.subtitle}</Typography>
+                    <Typography>{item.subtitle_2}</Typography>
                   </TimelineContent>
                 </TimelineItem>
               </motion.div>
