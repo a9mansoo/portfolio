@@ -7,8 +7,11 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Tooltip from "@mui/material/Tooltip";
 import { Link } from "react-router";
 import { motion } from "motion/react";
+import Switch from '@mui/material/Switch';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import NightlightRoundIcon from '@mui/icons-material/NightlightRound';
 
-function PageMenu({ positionY }) {
+function PageMenu({ positionY, setTheme }) {
   const menuItems = [
     { id: 1, label: "Home", link: "/home" },
     { id: 2, label: "Career", link: "/career" },
@@ -16,7 +19,12 @@ function PageMenu({ positionY }) {
   ];
 
   return (
-    <AppBar position="fixed" component={motion.div} animate={{y: positionY}} transition={{duration: 0.5, type: "easeIn"}}>
+    <AppBar
+      position="fixed"
+      component={motion.div}
+      animate={{ y: positionY }}
+      transition={{ duration: 0.5, type: "easeIn" }}
+    >
       <Toolbar disableGutters>
         <MenuList>
           <Box sx={{ display: "flex", flexDirection: "row" }}>
@@ -36,7 +44,12 @@ function PageMenu({ positionY }) {
           </Box>
         </MenuList>
 
-        <Box sx={{ ml: "auto", mr: "5px" }}>
+        <Box sx={{ ml: "auto", mr: "5px", display: "flex", flexDirection: "row", gap: 2 }}>
+          <Box sx={{display: "flex", alignItems: "center"}}>
+            <LightModeIcon fontSize="small"/>
+            <Switch onChange={setTheme}/>
+            <NightlightRoundIcon fontSize="small"/>
+          </Box>
           <Tooltip title="Github">
             <a href="https://github.com/a9mansoo" target="_blank">
               <IconButton>
