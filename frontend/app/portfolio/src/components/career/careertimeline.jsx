@@ -6,43 +6,14 @@ import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
 import Typography from "@mui/material/Typography";
-import { IconButton } from "@mui/material";
-import Modal from "@mui/material/Modal";
+import { Chip } from "@mui/material";
 import Box from "@mui/material/Box";
 import { useState } from "react";
 import { careerInfo } from "./careerinfo";
 import * as Icons from "@mui/icons-material";
 import { motion } from "motion/react";
 
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  gap: "5px",
-};
-
 export default function CustomizedTimeline() {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState("");
-
-  const handleModalOpen = (description) => {
-    setModalContent(description);
-    setModalOpen(true);
-  };
-
-  const handleModalClose = () => {
-    setModalOpen(false);
-  };
-
   return (
     <Box
       sx={{
@@ -95,17 +66,7 @@ export default function CustomizedTimeline() {
                   <TimelineSeparator>
                     <TimelineConnector sx={{ height: "30px" }} />
                     <TimelineDot>
-                      <IconButton
-                        onClick={() => handleModalOpen(item.description)}
-                        color="inherit"
-                        component={motion.div}
-                        whileHover={{
-                          scale: 1.3,
-                          transition: { duration: 0.3 },
-                        }}
-                      >
-                        <Icon color="primary" />
-                      </IconButton>
+                      <Icon color="primary" />
                     </TimelineDot>
                     <TimelineConnector sx={{ height: "80px" }} />
                   </TimelineSeparator>
@@ -120,14 +81,6 @@ export default function CustomizedTimeline() {
             );
           })}
         </Timeline>
-        <Modal open={modalOpen} onClose={handleModalClose}>
-          <Box sx={style}>
-            <Typography variant="h6">Experience</Typography>
-            <Typography variant="body2" sx={{ whiteSpace: "pre-line" }}>
-              {modalContent}
-            </Typography>
-          </Box>
-        </Modal>
       </Box>
     </Box>
   );
