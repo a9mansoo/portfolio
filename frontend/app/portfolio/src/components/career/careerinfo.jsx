@@ -5,7 +5,7 @@ export const careerInfo = [
     title: "University of Waterloo",
     icon: "School",
     subtitle: "Bachelors of Mathematics",
-    subtitle_2: ""
+    subtitle_2: "",
   },
   {
     id: 1,
@@ -13,7 +13,7 @@ export const careerInfo = [
     title: "DevOps Engineer",
     icon: "Settings",
     subtitle: "OpenText",
-    subtitle_2: "Automated cloud deployments in GCP."
+    subtitle_2: "Automated cloud deployments in GCP.",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const careerInfo = [
     title: "QA Automation Engineer",
     icon: "SmartToy",
     subtitle: "Imagine Communications",
-    subtitle_2: "Developed test automation scripts."
+    subtitle_2: "Developed test automation scripts.",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ export const careerInfo = [
     title: "SDET - Automation Tooling & DevOps Work",
     icon: "PrecisionManufacturing",
     subtitle: "Christie Digital Systems",
-    subtitle_2: "Developed web apps, CI/CD tooling, and testing frameworks."
+    subtitle_2: "Developed web apps, CI/CD tooling, and testing frameworks.",
   },
   {
     id: 4,
@@ -37,6 +37,7 @@ export const careerInfo = [
     title: "Software Developer Engineer in Test",
     icon: "ElectricCar",
     subtitle: "Ford Motors",
-    subtitle_2: "Developed automation frameworks, CI/CD tooling, and internal libraries."
+    subtitle_2:
+      "Developed automation frameworks, CI/CD tooling, and internal libraries.",
   },
 ];

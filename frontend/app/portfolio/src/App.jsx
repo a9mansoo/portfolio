@@ -11,37 +11,35 @@ function App() {
   const [scrollY, setScroll] = useState(0);
   const [mode, setMode] = useState("light");
   const currScroll = useRef(0);
-  const {pathname} = useLocation();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [pathname])
+  }, [pathname]);
 
   useEffect(() => {
     const handleScrollY = () => {
-      let posY = (window.scrollY > currScroll.current)? -200: 0
-      currScroll.current = window.scrollY
+      let posY = window.scrollY > currScroll.current ? -200 : 0;
+      currScroll.current = window.scrollY;
       setScroll(posY);
-    }
+    };
 
     window.addEventListener("scroll", handleScrollY);
 
     return () => {
       window.removeEventListener("scroll", handleScrollY);
-    }
-
-  }, [])
+    };
+  }, []);
 
   const setTheme = () => {
-    setMode(mode === "dark"? "light": "dark")
-  }
-
+    setMode(mode === "dark" ? "light" : "dark");
+  };
 
   return (
     <ThemeProvider theme={appTheme(mode)}>
-      <PageMenu positionY={scrollY} setTheme={setTheme}/>
+      <PageMenu positionY={scrollY} setTheme={setTheme} />
       <Routes>
-        <Route path="*" element={<Home/>} />
+        <Route path="*" element={<Home />} />
         <Route path="/career" element={<CustomizedTimeline />} />
         <Route path="/projects" element={<Projects />} />
       </Routes>

@@ -20,23 +20,25 @@ function Projects() {
 
   return (
     <>
-    <AnimatePresence mode="wait">
-        <Backdrop open={Boolean(id)} onClick={onClose} sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              zIndex: 1300
-            }}
-          >
-           {id && (
-              <ProjectCardMoreInfo
-                proj={projectsInfo.find((p) => p.id === id)}
-                onClose={onClose}
-              />
-             
-            )}
-        </Backdrop>   
-        </AnimatePresence>
+      <AnimatePresence mode="wait">
+        <Backdrop
+          open={Boolean(id)}
+          onClick={onClose}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 1300,
+          }}
+        >
+          {id && (
+            <ProjectCardMoreInfo
+              proj={projectsInfo.find((p) => p.id === id)}
+              onClose={onClose}
+            />
+          )}
+        </Backdrop>
+      </AnimatePresence>
       <Box
         sx={{
           display: "flex",
@@ -47,7 +49,7 @@ function Projects() {
         }}
       >
         <Typography variant="h4">Projects</Typography>
-        
+
         <Box
           sx={{
             display: "flex",

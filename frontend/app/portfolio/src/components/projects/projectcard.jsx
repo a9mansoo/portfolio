@@ -7,8 +7,8 @@ import { Backdrop, Box, ButtonGroup, Icon, Paper } from "@mui/material";
 import Button from "@mui/material/Button";
 import Chip from "@mui/material/Chip";
 import { motion } from "motion/react";
-import OpenInFullIcon from '@mui/icons-material/OpenInFull';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import OpenInFullIcon from "@mui/icons-material/OpenInFull";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import { IconButton } from "@mui/material";
 
 function ProjectCard({ proj, handleViewMore }) {
@@ -20,7 +20,7 @@ function ProjectCard({ proj, handleViewMore }) {
         maxWidth: 275,
         boxShadow: "0 2px 5px rgba(0,0,0,0.25)",
         display: "flex",
-        flexDirection: "column"
+        flexDirection: "column",
       }}
       key={proj.id}
       layout
@@ -29,7 +29,7 @@ function ProjectCard({ proj, handleViewMore }) {
       transition={{ type: "spring", stiffness: 200, damping: 30 }}
       variant="outlined"
     >
-      <CardContent sx={{flexGrow: 1}}>
+      <CardContent sx={{ flexGrow: 1 }}>
         <CardMedia
           component="img"
           image={proj.getImageSrc()}
@@ -48,12 +48,12 @@ function ProjectCard({ proj, handleViewMore }) {
       </CardContent>
       <CardActions sx={{ alignItems: "center", justifyContent: "center" }}>
         <a href={proj.link} target="_blank">
-        <IconButton>
-          <GitHubIcon></GitHubIcon>
-        </IconButton>
+          <IconButton>
+            <GitHubIcon></GitHubIcon>
+          </IconButton>
         </a>
         <IconButton onClick={() => handleViewMore(proj.id)}>
-          <OpenInFullIcon/>
+          <OpenInFullIcon />
         </IconButton>
       </CardActions>
     </Card>
@@ -62,13 +62,13 @@ function ProjectCard({ proj, handleViewMore }) {
 function ProjectCardMoreInfo({ proj, onClose }) {
   return (
     <Card
+      onClick={(e) => e.stopPropagation()}
       style={{
         position: "fixed",
         width: "100%",
         maxWidth: 800,
-        maxHeight: "90%",
         overflowY: "auto",
-        cursor: "pointer",
+        maxHeight: "calc(100vh - 40px)",
       }}
       layout
       layoutId={proj.id}
@@ -78,17 +78,25 @@ function ProjectCardMoreInfo({ proj, onClose }) {
     >
       <Paper elevation={1}>
         <CardContent sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-          <Typography sx={{textAlign: "center"}}variant="h6">{proj.title}</Typography>
-          <CardMedia component="img"
-          image={proj.getImageSrc()}
-          alt={proj.title}
-          sx={{
-    width: "100%",
-    maxHeight: 300,
-    objectFit: "cover",
-    borderRadius: 1
-  }}></CardMedia>
-          {proj.extendedInfo.map((info) => (<Typography variant="body1" wordBreak="break-word">{info}</Typography>))}
+          <Typography sx={{ textAlign: "center" }} variant="h6">
+            {proj.title}
+          </Typography>
+          <CardMedia
+            component="img"
+            image={proj.getImageSrc()}
+            alt={proj.title}
+            sx={{
+              width: "100%",
+              maxHeight: 300,
+              objectFit: "cover",
+              borderRadius: 1,
+            }}
+          ></CardMedia>
+          {proj.extendedInfo.map((info) => (
+            <Typography variant="body1" wordBreak="break-word">
+              {info}
+            </Typography>
+          ))}
           <Box
             sx={{
               display: "flex",
