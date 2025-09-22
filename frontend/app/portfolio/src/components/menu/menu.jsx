@@ -2,8 +2,6 @@ import { MenuItem, MenuList, Menu } from "@mui/material";
 import { AppBar, Toolbar, Box } from "@mui/material";
 import { Typography } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Tooltip from "@mui/material/Tooltip";
 import { Link, useLocation } from "react-router";
 import { motion } from "motion/react";
@@ -13,6 +11,8 @@ import NightlightRoundIcon from "@mui/icons-material/NightlightRound";
 import { useMediaQuery, useTheme } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useEffect, useState } from "react";
+import { menuLinks } from "./menuinfo";
+import * as Icons from "@mui/icons-material";
 
 function PageMenu({ positionY, setTheme }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -108,20 +108,18 @@ function PageMenu({ positionY, setTheme }) {
             </Tooltip>
             <NightlightRoundIcon fontSize="small" />
           </Box>
-          <Tooltip title="Github">
-            <a href="https://github.com/a9mansoo" target="_blank">
-              <IconButton>
-                <GitHubIcon />
-              </IconButton>
-            </a>
-          </Tooltip>
-          <Tooltip title="LinkedIn">
-            <a href="https://www.linkedin.com/in/ayaan-m27/" target="_blank">
-              <IconButton>
-                <LinkedInIcon />
-              </IconButton>
-            </a>
-          </Tooltip>
+          {menuLinks.map((item) => {
+            let Icon = Icons[item.icon];
+            return (
+              <Tooltip title={item.tooltip} key={item.id}>
+                <a href={item.link} target="_blank">
+                  <IconButton>
+                    <Icon />
+                  </IconButton>
+                </a>
+              </Tooltip>
+            );
+          })}
         </Box>
       </Toolbar>
     </AppBar>

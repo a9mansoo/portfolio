@@ -1,6 +1,9 @@
 import { Typography, Box } from "@mui/material";
 import { motion } from "motion/react";
 import { Link } from "react-router";
+import { skillSet, ProfileName } from "./skillset";
+import List from '@mui/material/List';
+import ListItemText from '@mui/material/ListItemText';
 
 function Home() {
   return (
@@ -43,9 +46,9 @@ function Home() {
           >
             👋🏾
           </motion.span>
-          I'm FakeNmae!
+          I'm {ProfileName}!
         </Typography>
-        <Typography variant="subtitle" wordBreak="wrap">
+        <Typography variant="subtitle1">
           A multifaceted software engineer, focused on DevOps and automation
           tooling.
           <motion.span
@@ -78,23 +81,11 @@ function Home() {
         transition={{ duration: 2 }}
       >
         <Typography variant="h3">Skill Set</Typography>
-        <Typography variant="body1" wordBreak="wrap">
-          ✅ DevOps & Cloud - Automated cloud deployments with Docker, k8s and
-          helm.
-          <br />
-          <br />
-          ✅ CI/CD pipelines - Managed Jenkins pipelines for faster software
-          delivery and testing integration.
-          <br />
-          <br />
-          ✅ Web apps & APIs - Developed Flask/FastAPI apps for internal
-          tooling.
-          <br />
-          <br />
-          ✅ Automation tooling - Built internal Python frameworks to reduce
-          test effort.
-          <br />
-        </Typography>
+        <List >
+          {skillSet.map((item, index)=> (
+            <ListItemText primary={item} key={index}></ListItemText>
+          ))}
+          </List>
       </Box>
       <Box
         sx={{

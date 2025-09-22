@@ -49,7 +49,6 @@ export const projectsInfo = [
       "Docker Compose",
       "Arduino",
       "Telegraf",
-      "IoT",
     ],
   },
   {

@@ -93,7 +93,7 @@ function ProjectCardMoreInfo({ proj }) {
             }}
           ></CardMedia>
           {proj.extendedInfo.map((info) => (
-            <Typography variant="body1" wordBreak="break-word">
+            <Typography variant="body1">
               {info}
             </Typography>
           ))}
@@ -107,9 +107,9 @@ function ProjectCardMoreInfo({ proj }) {
           >
             {proj.chips.map((chip) => (
               <Chip
-                style={{ background: "#e0e0e0" }}
                 label={chip}
-                variant="outlined"
+                color="success"
+                component={motion.div}
               />
             ))}
           </Box>

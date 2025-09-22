@@ -74,8 +74,9 @@ export default function CustomizedTimeline() {
                     <Typography variant="h6" component="span">
                       {item.title}
                     </Typography>
-                    <Typography>{item.subtitle}</Typography>
-                    <Typography>{item.subtitle_2}</Typography>
+                    <Typography variant="subtitle1">{item.subtitle}</Typography>
+                    <br/>
+                    <Typography variant="subtitle2">{item.subtitle_2}</Typography>
                   </TimelineContent>
                 </TimelineItem>
               </motion.div>

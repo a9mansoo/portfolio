@@ -1,5 +1,5 @@
 import CustomizedTimeline from "./components/career/careertimeline";
-import { PageMenu } from "./components/menu";
+import { PageMenu } from "./components/menu/menu";
 import { Routes, Route, useLocation } from "react-router";
 import { Projects } from "./components/projects/projects";
 import { Home } from "./components/home/home";
