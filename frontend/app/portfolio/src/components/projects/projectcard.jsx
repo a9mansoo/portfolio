@@ -18,7 +18,7 @@ function ProjectCard({ proj, handleViewMore }) {
         maxHeight: 450,
         flexGrow: 1,
         maxWidth: 275,
-        boxShadow: "0 2px 5px rgba(0,0,0,0.25)",
+        boxShadow: "0 5px 10px rgba(0, 0, 0, 0.51)",
         display: "flex",
         flexDirection: "column",
       }}

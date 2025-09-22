@@ -1,18 +1,35 @@
 import { createTheme } from "@mui/material";
 
-
-export const appTheme = (mode) => createTheme({
-  palette: {
-    mode: mode,
-    primary: {
-      main: '#e8e8f7ff',
-      light: '#4a4e69',
-      dark: '#9a8c98',
-      contrastText: '#c9ada7',
-    },
-    secondary: {
-      main: '#f50057',
-    },
-  },
-});
-
+export const appTheme = (mode) =>
+  mode === "light"
+    ? createTheme({
+        palette: {
+          mode: "light",
+          primary: {
+            main: "#593b24",
+          },
+          secondary: {
+            main: "#a3a869",
+          },
+          error: {
+            main: "#d18934",
+          },
+          warning: {
+            main: "#d3b090",
+          },
+          success: {
+            main: "#93ad76",
+          },
+          info: {
+            main: "#936e4e",
+          },
+        },
+        typography: {
+          fontFamily: "monospace",
+        },
+      })
+    : createTheme({
+        palette: {
+          mode: "dark",
+        },
+      });

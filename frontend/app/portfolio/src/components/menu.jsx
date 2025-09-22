@@ -1,22 +1,44 @@
-import { MenuItem, MenuList } from "@mui/material";
+import { MenuItem, MenuList, Menu } from "@mui/material";
 import { AppBar, Toolbar, Box } from "@mui/material";
 import { Typography } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Tooltip from "@mui/material/Tooltip";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { motion } from "motion/react";
 import Switch from "@mui/material/Switch";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import NightlightRoundIcon from "@mui/icons-material/NightlightRound";
+import { useMediaQuery, useTheme } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useEffect, useState } from "react";
 
 function PageMenu({ positionY, setTheme }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
   const menuItems = [
     { id: 1, label: "Home", link: "/home" },
     { id: 2, label: "Career", link: "/career" },
     { id: 3, label: "Projects", link: "/projects" },
   ];
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    handleMenuButtonClose();
+  }, [pathname]);
+
+  const handleMenuButtonClick = (e) => {
+    setAnchorEl(e.currentTarget);
+    setMenuOpen(true);
+  };
+
+  const handleMenuButtonClose = () => {
+    setAnchorEl(null);
+    setMenuOpen(false);
+  };
 
   return (
     <AppBar
@@ -26,24 +48,50 @@ function PageMenu({ positionY, setTheme }) {
       transition={{ duration: 0.5, type: "easeIn" }}
     >
       <Toolbar disableGutters>
-        <MenuList>
-          <Box sx={{ display: "flex", flexDirection: "row" }}>
-            {menuItems.map((item) => (
-              <Link
-                to={item.link}
-                style={{ textDecoration: "none", color: "inherit" }}
-                key={item.id}
-              >
-                <MenuItem>
-                  <Tooltip title={item.label}>
-                    <Typography>{item.label}</Typography>
-                  </Tooltip>
-                </MenuItem>
-              </Link>
-            ))}
-          </Box>
-        </MenuList>
-
+        {isMobile ? (
+          <>
+            <IconButton onClick={(e) => handleMenuButtonClick(e)}>
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              open={menuOpen}
+              onClose={handleMenuButtonClose}
+              anchorEl={anchorEl}
+            >
+              {menuItems.map((item) => (
+                <Link
+                  to={item.link}
+                  style={{ textDecoration: "none", color: "inherit" }}
+                  key={item.id}
+                >
+                  <MenuItem>
+                    <Tooltip title={item.label}>
+                      <Typography>{item.label}</Typography>
+                    </Tooltip>
+                  </MenuItem>
+                </Link>
+              ))}
+            </Menu>
+          </>
+        ) : (
+          <MenuList>
+            <Box sx={{ display: "flex", flexDirection: "row" }}>
+              {menuItems.map((item) => (
+                <Link
+                  to={item.link}
+                  style={{ textDecoration: "none", color: "inherit" }}
+                  key={item.id}
+                >
+                  <MenuItem>
+                    <Tooltip title={item.label}>
+                      <Typography>{item.label}</Typography>
+                    </Tooltip>
+                  </MenuItem>
+                </Link>
+              ))}
+            </Box>
+          </MenuList>
+        )}
         <Box
           sx={{
             ml: "auto",
