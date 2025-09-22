@@ -108,9 +108,8 @@ function Home() {
           </Link>{" "}
           or{" "}
           <Link to="/projects" style={{ textDecoration: "none" }}>
-            Projects
+            Projects!
           </Link>
-          !
         </Typography>
       </Box>
     </Box>
