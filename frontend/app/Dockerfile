@@ -5,7 +5,7 @@ WORKDIR /opt/app
 
 COPY portfolio/ ./
 
-RUN npm install package-lock.json
+RUN npm install
 
 RUN npm run build
 

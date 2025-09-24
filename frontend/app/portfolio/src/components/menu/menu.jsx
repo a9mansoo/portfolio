@@ -102,18 +102,18 @@ function PageMenu({ positionY, setTheme }) {
           }}
         >
           <Box sx={{ display: "flex", alignItems: "center" }}>
-            <LightModeIcon fontSize="small" />
+            <LightModeIcon fontSize="small"/>
             <Tooltip title="Mode">
               <Switch onChange={setTheme} />
             </Tooltip>
-            <NightlightRoundIcon fontSize="small" />
+            <NightlightRoundIcon fontSize="small"/>
           </Box>
           {menuLinks.map((item) => {
             let Icon = Icons[item.icon];
             return (
               <Tooltip title={item.tooltip} key={item.id}>
                 <a href={item.link} target="_blank">
-                  <IconButton>
+                  <IconButton color="secondary">
                     <Icon />
                   </IconButton>
                 </a>

@@ -31,5 +31,28 @@ export const appTheme = (mode) =>
     : createTheme({
         palette: {
           mode: "dark",
-        },
-      });
+          primary: {
+            main: "#936e4e",
+          },
+          secondary: {
+            main: "#a3a869",
+          },
+          error: {
+            main: "#865113",
+          },
+          warning: {
+            main: "#724444",
+          },
+          success: {
+            main: "#93ad76",
+          },
+          info: {
+            main: "#0b2f5a",
+          },
+          text: {
+            primary: "#ede0d4",
+          }},
+          typography: {
+            fontFamily: "monospace",
+          },
+});

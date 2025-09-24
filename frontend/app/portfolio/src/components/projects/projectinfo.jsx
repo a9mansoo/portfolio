@@ -1,6 +1,7 @@
 import luckyShrubImg from "../../assets/luckyshrub.png";
 import iotImg from "../../assets/iot.png";
 import cellImg from "../../assets/cell_detection.png";
+import passwordManagerImg from "../../assets/pm.png";
 
 export const projectsInfo = [
   {
@@ -9,7 +10,7 @@ export const projectsInfo = [
     date: "2025",
     description: "Fullstack application for password management",
     link: "https://github.com/a9mansoo/password_manager",
-    getImageSrc: () => luckyShrubImg,
+    getImageSrc: () => passwordManagerImg,
     extendedInfo: [
       "• Developed a secure, self-hosted password manager using React, FastAPI, and SQL, eliminating third-party dependencies.",
       "• Containerized UI, API, and database with Docker Compose, enabling one-command deployment on any host.",
@@ -59,8 +60,8 @@ export const projectsInfo = [
     link: "https://github.com/a9mansoo/Computational-Linear-Algebra/tree/main/4%20Specteral%20Clustering",
     getImageSrc: () => cellImg,
     extendedInfo: [
-      "• Engineered a computer vision application to detect animal cells.",
-      "• Achieved 85% detection accuracy on microscopy images.",
+      "• Developed a cell detection model using MATLAB and spectral clustering, achieving 85% accuracy on microscopy datasets.",
+      "• Applied linear algebra and clustering methods to biological imaging, demonstrating cross-domain application of ML techniques.",
     ],
     chips: ["Computer Vision", "MATLAB"],
   },
@@ -72,7 +73,7 @@ export const projectsInfo = [
     link: "https://github.com/a9mansoo/LuckyShrub",
     getImageSrc: () => luckyShrubImg,
     extendedInfo: [
-      "• Responsive storefront site using modern CSS Grid/Flexbox, improving load performance and layout consistency across devices.",
+      "• Responsive storefront site using modern CSS Grid/Flexbox, improving layout consistency across devices.",
     ],
     chips: ["HTML", "CSS", "Javascript", "Flexbox", "Grid"],
   },
