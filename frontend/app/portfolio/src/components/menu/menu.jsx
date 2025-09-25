@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 import { menuLinks } from "./menuinfo";
 import * as Icons from "@mui/icons-material";
 
-function PageMenu({ positionY, setTheme }) {
+function PageMenu({ positionY, setTheme, checked }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const menuItems = [
@@ -105,7 +105,7 @@ function PageMenu({ positionY, setTheme }) {
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <LightModeIcon fontSize="small"/>
             <Tooltip title="Mode">
-              <Switch onChange={setTheme} />
+              <Switch checked={checked} onChange={setTheme} color="secondary"/>
             </Tooltip>
             <NightlightRoundIcon fontSize="small"/>
           </Box>
