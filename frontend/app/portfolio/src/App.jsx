@@ -1,4 +1,4 @@
-import CustomizedTimeline from "./components/career/careertimeline";
+import { CareerTimeline } from "./components/career/careertimeline";
 import { PageMenu } from "./components/menu/menu";
 import { Routes, Route, useLocation } from "react-router";
 import { Projects } from "./components/projects/projects";
@@ -48,7 +48,7 @@ function App() {
         <PageMenu positionY={scrollY} setTheme={setTheme} />
         <Routes>
           <Route path="*" element={<Home />} />
-          <Route path="/career" element={<CustomizedTimeline />} />
+          <Route path="/career" element={<CareerTimeline />} />
           <Route path="/projects" element={<Projects />} />
         </Routes>
       </Box>

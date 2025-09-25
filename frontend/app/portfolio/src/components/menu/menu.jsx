@@ -46,6 +46,7 @@ function PageMenu({ positionY, setTheme }) {
       component={motion.div}
       animate={{ y: positionY }}
       transition={{ duration: 0.5, type: "easeIn" }}
+      color="primary"
     >
       <Toolbar disableGutters>
         {isMobile ? (

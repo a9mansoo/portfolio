@@ -1,7 +1,6 @@
 import { ProjectCard, ProjectCardMoreInfo } from "./projectcard";
 import { projectsInfo } from "./projectinfo";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import { Box, Paper, Backdrop } from "@mui/material";
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
@@ -10,7 +9,6 @@ function Projects() {
   const [id, setId] = useState(null);
 
   const handleViewMore = (id) => {
-    console.log(id);
     setId(id);
   };
 
@@ -63,6 +61,7 @@ function Projects() {
           }}
         >
           {projectsInfo.map((proj) => (
+            id === proj.id? null:
             <ProjectCard
               proj={proj}
               handleViewMore={handleViewMore}

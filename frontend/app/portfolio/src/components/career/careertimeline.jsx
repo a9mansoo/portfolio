@@ -13,7 +13,7 @@ import { careerInfo } from "./careerinfo";
 import * as Icons from "@mui/icons-material";
 import { motion } from "motion/react";
 
-export default function CustomizedTimeline() {
+export default function CareerTimeline() {
   return (
     <Box
       sx={{
@@ -91,4 +91,4 @@ export default function CustomizedTimeline() {
   );
 }
 
-export { CustomizedTimeline };
+export { CareerTimeline };
