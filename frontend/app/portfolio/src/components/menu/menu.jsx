@@ -52,7 +52,7 @@ function PageMenu({ positionY, setTheme }) {
         {isMobile ? (
           <>
             <IconButton onClick={(e) => handleMenuButtonClick(e)}>
-              <MenuIcon />
+              <MenuIcon color="secondary"/>
             </IconButton>
             <Menu
               open={menuOpen}
