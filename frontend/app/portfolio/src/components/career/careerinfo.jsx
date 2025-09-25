@@ -33,7 +33,7 @@ export const careerInfo = [
   },
   {
     id: 4,
-    date: "Dec 2024 - Present",
+    date: "Dec 2024 - Now",
     title: "SDET",
     icon: "ElectricCar",
     subtitle: "Ford Motors",
