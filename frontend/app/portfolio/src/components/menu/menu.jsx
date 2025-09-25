@@ -52,7 +52,7 @@ function PageMenu({ positionY, setTheme, checked }) {
         {isMobile ? (
           <>
             <IconButton onClick={(e) => handleMenuButtonClick(e)}>
-              <MenuIcon color="secondary"/>
+              <MenuIcon color="secondary" />
             </IconButton>
             <Menu
               open={menuOpen}
@@ -103,11 +103,11 @@ function PageMenu({ positionY, setTheme, checked }) {
           }}
         >
           <Box sx={{ display: "flex", alignItems: "center" }}>
-            <LightModeIcon fontSize="small"/>
+            <LightModeIcon fontSize="small" />
             <Tooltip title="Mode">
-              <Switch checked={checked} onChange={setTheme} color="secondary"/>
+              <Switch checked={checked} onChange={setTheme} color="secondary" />
             </Tooltip>
-            <NightlightRoundIcon fontSize="small"/>
+            <NightlightRoundIcon fontSize="small" />
           </Box>
           {menuLinks.map((item) => {
             let Icon = Icons[item.icon];

@@ -2,10 +2,11 @@ import luckyShrubImg from "../../assets/luckyshrub.png";
 import iotImg from "../../assets/iot.png";
 import cellImg from "../../assets/cell_detection.png";
 import passwordManagerImg from "../../assets/pm.png";
+import WatoplyImg from "../../assets/watoply.png";
 
 export const projectsInfo = [
   {
-    id: 4,
+    id: 5,
     title: "Password Manager",
     date: "2025",
     description: "Fullstack application for password management",
@@ -30,7 +31,7 @@ export const projectsInfo = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "IoT Telemetry System",
     date: "2025",
     description:
@@ -53,7 +54,7 @@ export const projectsInfo = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "Animal Cell Detection",
     date: "2021",
     description: "Computer vision application for detecting animal cells",
@@ -66,7 +67,7 @@ export const projectsInfo = [
     chips: ["Computer Vision", "MATLAB"],
   },
   {
-    id: 1,
+    id: 2,
     title: "Lucky Shrub",
     date: "2021",
     description: "Website for a for a local shrubbery using modern css",
@@ -76,5 +77,20 @@ export const projectsInfo = [
       "• Responsive storefront site using modern CSS Grid/Flexbox, improving layout consistency across devices.",
     ],
     chips: ["HTML", "CSS", "Javascript", "Flexbox", "Grid"],
+  },
+  {
+    id: 1,
+    title: "Watoply",
+    date: "2020",
+    description: "Waterloo themed monopoly game",
+    link: "https://github.com/a9mansoo/Watopoly",
+    getImageSrc: () => WatoplyImg,
+    extendedInfo: [
+      "• Built a Monopoly-style game in C++ applying Observer and Strategy design patterns to manage dynamic board state and tile-specific behaviors.",
+      "• Applied STL containers and smart pointers to manage game components efficiently, minimizing manual memory management and reducing potential errors.",
+      "• Leveraged polymorphism and abstract classes to handle different tile behaviors (Academic Buildings, Residences, Gyms, Non-property tiles) through a single entry function (landed).",
+      "• Implemented a text-based interface with observer-driven display updates, ensuring the game state and visual representation stayed synchronized.",
+    ],
+    chips: ["C++", "Object Oriented Programming", "Design Patterns", "STL"],
   },
 ];

@@ -10,7 +10,9 @@ import { CssBaseline, Box } from "@mui/material";
 
 function App() {
   const [scrollY, setScroll] = useState(0);
-  const [mode, setMode] = useState(() => {return localStorage.getItem("preference") || "light"});
+  const [mode, setMode] = useState(() => {
+    return localStorage.getItem("preference") || "light";
+  });
   const currScroll = useRef(0);
   const { pathname } = useLocation();
 
@@ -33,7 +35,7 @@ function App() {
   }, []);
 
   const setTheme = () => {
-    let themeType = mode === "dark" ? "light" : "dark"
+    let themeType = mode === "dark" ? "light" : "dark";
     localStorage.setItem("preference", themeType);
     setMode(themeType);
   };
@@ -47,7 +49,11 @@ function App() {
           color: "text.primary",
         }}
       >
-        <PageMenu positionY={scrollY} setTheme={setTheme} checked={mode === "light"? false: true}/>
+        <PageMenu
+          positionY={scrollY}
+          setTheme={setTheme}
+          checked={mode === "light" ? false : true}
+        />
         <Routes>
           <Route path="*" element={<Home />} />
           <Route path="/career" element={<CareerTimeline />} />
