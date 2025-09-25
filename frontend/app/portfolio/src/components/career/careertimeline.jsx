@@ -23,7 +23,6 @@ export default function CustomizedTimeline() {
         alignItems: "center",
         textAlign: "center",
         mt: 12,
-        pr: "20px",
       }}
     >
       <Typography variant="h4" sx={{ ml: 4 }}>
@@ -36,6 +35,7 @@ export default function CustomizedTimeline() {
           justifyContent: "center",
           width: "100%",
           py: 4,
+          pr: "20px"
         }}
       >
         <Timeline
