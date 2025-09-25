@@ -23,6 +23,7 @@ export default function CustomizedTimeline() {
         alignItems: "center",
         textAlign: "center",
         mt: 12,
+        pr: "20px",
       }}
     >
       <Typography variant="h4" sx={{ ml: 4 }}>
@@ -56,7 +57,7 @@ export default function CustomizedTimeline() {
               >
                 <TimelineItem sx={{ mb: 3, p: 3 }}>
                   <TimelineOppositeContent
-                    sx={{ m: "auto 0", width: "20px", mr: "10px" }}
+                    sx={{ m: "auto 0", width: "20px", mr: "30px" }}
                     align="right"
                     variant="body2"
                     color="text.secondary"
@@ -75,8 +76,10 @@ export default function CustomizedTimeline() {
                       {item.title}
                     </Typography>
                     <Typography variant="subtitle1">{item.subtitle}</Typography>
-                    <br/>
-                    <Typography variant="subtitle2">{item.subtitle_2}</Typography>
+                    <br />
+                    <Typography variant="subtitle2">
+                      {item.subtitle_2}
+                    </Typography>
                   </TimelineContent>
                 </TimelineItem>
               </motion.div>

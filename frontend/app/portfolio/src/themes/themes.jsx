@@ -51,7 +51,12 @@ export const appTheme = (mode) =>
           },
           text: {
             primary: "#ede0d4",
-          }},
+          },
+          background: {
+            paper: "#121212",
+            default: "#121212"
+          }
+        },
           typography: {
             fontFamily: "monospace",
           },
