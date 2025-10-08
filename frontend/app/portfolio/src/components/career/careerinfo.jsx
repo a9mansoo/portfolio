@@ -26,15 +26,15 @@ export const careerInfo = [
   {
     id: 3,
     date: "Oct 2021 - Dec 2024",
-    title: "SDET",
+    title: "Software Developer",
     icon: "PrecisionManufacturing",
     subtitle: "Christie Digital Systems",
-    subtitle_2: "Developed web apps, CI/CD tooling, and testing frameworks.",
+    subtitle_2: "Developed web apps, CI/CD tooling, and automation frameworks.",
   },
   {
     id: 4,
     date: "Dec 2024 - Now",
-    title: "SDET",
+    title: "Software Tools Developer",
     icon: "ElectricCar",
     subtitle: "Ford Motors",
     subtitle_2:
