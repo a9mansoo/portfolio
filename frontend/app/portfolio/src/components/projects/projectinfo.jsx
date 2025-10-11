@@ -15,7 +15,7 @@ export const projectsInfo = [
     extendedInfo: [
       "• Developed a secure, self-hosted password manager using React, FastAPI, and SQL, eliminating third-party dependencies.",
       "• Containerized UI, API, and database with Docker Compose, enabling one-command deployment on any host.",
-      "• Comes with JWT Authentication system, automated database migrations and asynchronous password managment service.",
+      "• Comes with JWT Authentication system, automated database migrations and asynchronous password management service.",
     ],
     chips: [
       "React",
