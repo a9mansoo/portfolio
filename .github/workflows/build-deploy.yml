@@ -14,6 +14,11 @@ jobs:
             - name: Setup Node
               uses: actions/setup-node@v4
             
+            - name: Install Dependencies
+              working-directory: frontend/app/portfolio
+              run: |
+                npm i
+            
             - name: Build and Deploy
               working-directory: frontend/app/portfolio
               run: |
