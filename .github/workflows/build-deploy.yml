@@ -1,0 +1,21 @@
+name: Build and Deploy to Github Pages
+
+
+on:
+    workflow_dispatch:
+
+jobs:
+    build_and_deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+            
+            - name: Setup Node
+              uses: actions/setup-node@v4
+            
+            - name: Build and Deploy
+              working-directory: frontend/app/portfolio
+              run: |
+                echo "Building and deploying app"
+                npm run deploy
