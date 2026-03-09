@@ -20,7 +20,8 @@ function PageMenu({ positionY, setTheme, checked }) {
   const menuItems = [
     { id: 1, label: "Home", link: "/home" },
     { id: 2, label: "Career", link: "/career" },
-    { id: 3, label: "Projects", link: "/projects" },
+    { id: 3, label: "Certifications", link: "/certifications"},
+    { id: 4, label: "Projects", link: "/projects" }
   ];
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));

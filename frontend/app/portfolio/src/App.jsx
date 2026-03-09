@@ -2,6 +2,7 @@ import { CareerTimeline } from "./components/career/careertimeline";
 import { PageMenu } from "./components/menu/menu";
 import { Routes, Route, useLocation } from "react-router";
 import { Projects } from "./components/projects/projects";
+import { CertificationsList } from "./components/certifications/certificationlist";
 import { Home } from "./components/home/home";
 import { useEffect, useState, useRef } from "react";
 import { ThemeProvider } from "@mui/material/styles";
@@ -58,6 +59,7 @@ function App() {
           <Route path="*" element={<Home />} />
           <Route path="/career" element={<CareerTimeline />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/certifications" element={<CertificationsList />} />
         </Routes>
       </Box>
     </ThemeProvider>
