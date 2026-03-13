@@ -3,8 +3,33 @@ import iotImg from "../../assets/iot.png";
 import cellImg from "../../assets/cell_detection.png";
 import passwordManagerImg from "../../assets/pm.png";
 import WatoplyImg from "../../assets/watoply.png";
+import aiAnimeRecommender from "../../assets/ai_anime_recommender.png"
 
 export const projectsInfo = [
+  {
+    id: 6,
+    title: "AI Anime Recommender",
+    date: "2025",
+    description: "Anime Recommendation Chat Application Powered by AI",
+    link: "https://github.com/a9mansoo/AI_recommendation_system",
+    getImageSrc: () => aiAnimeRecommender,
+    extendedInfo: [
+      "• Developed a RAG Chat application for recommending Anime to users.",
+      "• Containerized UI and API with Docker Compose, enabling one-command deployment on any host.",
+      "• Implemented Websocket communication for seamless chat interface with LLM model.",
+    ],
+    chips: [
+      "RAG",
+      "Vector DB",
+      "Groq API",
+      "Websockets",
+      "Chakra UI",
+      "React",
+      "FastAPI",
+      "Docker Compose",
+      "Docker"
+    ],
+  },
   {
     id: 5,
     title: "Password Manager",
