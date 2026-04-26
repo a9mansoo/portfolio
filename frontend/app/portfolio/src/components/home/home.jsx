@@ -49,7 +49,7 @@ function Home() {
           I'm {ProfileName}!
         </Typography>
         <Typography variant="subtitle1">
-          A multifaceted software engineer, focused on DevOps and automation
+          A multifaceted software developer, focused on DevOps and automation
           tooling.
           <motion.span
             style={{ display: "inline-block" }}
