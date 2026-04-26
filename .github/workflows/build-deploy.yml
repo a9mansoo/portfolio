@@ -48,8 +48,12 @@ jobs:
         needs: build
         runs-on: ubuntu-latest
         if: ${{ !inputs.skip_deploy }}
-        env:
-          URL: "a9mansoo/portfolio.git"
+        permissions:
+          pages: write
+          id-token: write
+        environment:
+          name: github-pages
+          url: ${{ steps.deployment.outputs.page_url }}
         steps:  
             - name: Download Build Artifacts
               uses: actions/download-artifact@v7
@@ -57,10 +61,8 @@ jobs:
                 artifact-ids: ${{ needs.build.outputs.ARTIFACT_ID }}
                 digest-mismatch: error
             - name: Deploy
-              run: |
-                git config --global user.email "github-actions[bot]@users.noreply.github.com"
-                git config --global user.name "github-actions[bot]"
-                git remote set-url origin https://github-actions[bot]:${{ github.token }}@github.com/${{ env.URL}}
-                echo "Deploying distribution files to GitHub Pages..."
-                gh-pages -d dist
+              uses: actions/deploy-pages@v4
+              id: deployment
+              with:
+                artifact-name: dist
               
