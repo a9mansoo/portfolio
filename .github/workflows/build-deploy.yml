@@ -37,7 +37,7 @@ jobs:
                 echo "dist_path=${GITHUB_WORKSPACE}/frontend/app/portfolio/dist" >> $GITHUB_OUTPUTS
             
             - name: Upload Build Artifacts
-              uses: action/upload-artifact@v7
+              uses: actions/upload-artifact@v7
               id: upload
               with:
                 name: app-${{ github.run_id }}
@@ -52,7 +52,7 @@ jobs:
           URL: "a9mansoo/portfolio.git"
         steps:  
             - name: Download Build Artifacts
-              uses: action/download-artifact@v7
+              uses: actions/download-artifact@v7
               with:
                 name: ${{ needs.build.outputs.ARTIFACT_ID }}
                 digest-mismatch: error
