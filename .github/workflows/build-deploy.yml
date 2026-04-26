@@ -34,7 +34,7 @@ jobs:
               id: build
               run: |
                 npm run build
-                echo "dist_path=${GITHUB_WORKSPACE}/frontend/app/portfolio/dist" >> "$GITHUB_OUTPUT"
+                echo "dist_path=${GITHUB_WORKSPACE}/frontend/app/portfolio/" >> "$GITHUB_OUTPUT"
             
             - name: Upload Build Artifacts
               uses: actions/upload-artifact@v7
