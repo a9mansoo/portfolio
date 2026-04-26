@@ -34,7 +34,7 @@ jobs:
               id: build
               run: |
                 npm run build
-                echo "dist_path=${GITHUB_WORKSPACE}/frontend/app/portfolio/" >> "$GITHUB_OUTPUT"
+                echo "dist_path=${GITHUB_WORKSPACE}/frontend/app/portfolio/dist" >> "$GITHUB_OUTPUT"
             
             - name: Upload Build Artifacts
               uses: actions/upload-artifact@v7
@@ -55,11 +55,14 @@ jobs:
           name: github-pages
           url: ${{ steps.deployment.outputs.page_url }}
         steps:  
+            - name: Make dist dir
+              run: mkdir dist
             - name: Download Build Artifacts
               uses: actions/download-artifact@v7
               with:
                 artifact-ids: ${{ needs.build.outputs.ARTIFACT_ID }}
                 digest-mismatch: error
+                path: dist
             - name: Deploy
               uses: actions/deploy-pages@v4
               id: deployment
