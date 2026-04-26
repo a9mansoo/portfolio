@@ -15,8 +15,6 @@ permissions:
 jobs:
     build:
         runs-on: ubuntu-latest
-        outputs:
-          ARTIFACT_ID: ${{ steps.upload.outputs.artifact-id }}
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
@@ -37,10 +35,9 @@ jobs:
                 echo "dist_path=${GITHUB_WORKSPACE}/frontend/app/portfolio/dist" >> "$GITHUB_OUTPUT"
             
             - name: Upload Build Artifacts
-              uses: actions/upload-artifact@v7
+              uses: actions/upload-pages-artifact@v3
               id: upload
               with:
-                name: app-${{ github.run_id }}
                 path: ${{ steps.build.outputs.dist_path }}
 
 
