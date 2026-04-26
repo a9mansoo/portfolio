@@ -63,9 +63,12 @@ jobs:
                 artifact-ids: ${{ needs.build.outputs.ARTIFACT_ID }}
                 digest-mismatch: error
                 path: dist
+            
+            - name: List Artifacts
+              run: ls -la dist/*
             - name: Deploy
               uses: actions/deploy-pages@v4
               id: deployment
               with:
-                artifact-name: dist
+                artifact_name: dist
               
