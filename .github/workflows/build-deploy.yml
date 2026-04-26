@@ -3,12 +3,20 @@ name: Build and Deploy to Github Pages
 
 on:
     workflow_dispatch:
+      inputs:
+        skip_deploy:
+          description: 'Skip deployment step'
+          required: true
+          type: boolean
+          default: true
 
 permissions:
     contents: write
 jobs:
-    build_and_deploy:
+    build:
         runs-on: ubuntu-latest
+        outputs:
+          ARTIFACT_ID: ${{ steps.upload.outputs.artifact-id }}
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
@@ -21,11 +29,38 @@ jobs:
               run: |
                 npm i
             
-            - name: Build and Deploy
+            - name: Build App
               working-directory: frontend/app/portfolio
+              id: build
+              run: |
+                npm run build
+                echo "dist_path=${GITHUB_WORKSPACE}/frontend/app/portfolio/dist" >> $GITHUB_OUTPUTS
+            
+            - name: Upload Build Artifacts
+              uses: action/upload-artifact@v7
+              id: upload
+              with:
+                name: app-${{ github.run_id }}
+                path: ${{ steps.build.outputs.dist_path }}
+
+
+    deploy:
+        needs: build
+        runs-on: ubuntu-latest
+        if: ${{ !github.event.inputs.skip_deploy }}
+        env:
+          URL: "a9mansoo/portfolio.git"
+        steps:  
+            - name: Download Build Artifacts
+              uses: action/download-artifact@v7
+              with:
+                name: ${{ needs.build.outputs.ARTIFACT_ID }}
+                digest-mismatch: error
+            - name: Deploy
               run: |
                 git config --global user.email "github-actions[bot]@users.noreply.github.com"
                 git config --global user.name "github-actions[bot]"
-                git remote set-url origin https://github-actions[bot]:${{ github.token }}@github.com/a9mansoo/portfolio.git
-                echo "Building and deploying app"
-                npm run deploy
+                git remote set-url origin https://github-actions[bot]:${{ github.token }}@github.com/${{ env.URL}}
+                echo "Deploying distribution files to GitHub Pages..."
+                gh-pages -d dist
+              
