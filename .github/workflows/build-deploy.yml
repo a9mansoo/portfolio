@@ -54,7 +54,7 @@ jobs:
             - name: Download Build Artifacts
               uses: actions/download-artifact@v7
               with:
-                name: ${{ needs.build.outputs.ARTIFACT_ID }}
+                artifact-ids: ${{ needs.build.outputs.ARTIFACT_ID }}
                 digest-mismatch: error
             - name: Deploy
               run: |
