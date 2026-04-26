@@ -55,20 +55,9 @@ jobs:
           name: github-pages
           url: ${{ steps.deployment.outputs.page_url }}
         steps:  
-            - name: Make dist dir
-              run: mkdir dist
-            - name: Download Build Artifacts
-              uses: actions/download-artifact@v7
-              with:
-                artifact-ids: ${{ needs.build.outputs.ARTIFACT_ID }}
-                digest-mismatch: error
-                path: dist
-            
-            - name: List Artifacts
-              run: ls -la dist/*
             - name: Deploy
               uses: actions/deploy-pages@v4
               id: deployment
               with:
-                artifact_name: dist
+                artifact_name: app-${{ github.run_id}}
               
