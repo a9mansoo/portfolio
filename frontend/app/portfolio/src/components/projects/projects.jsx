@@ -4,11 +4,13 @@ import Typography from "@mui/material/Typography";
 import { Box, Paper, Backdrop } from "@mui/material";
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
+import { trackEvent } from "../../analytics/trackEvent";
 
 function Projects() {
   const [id, setId] = useState(null);
 
   const handleViewMore = (id) => {
+    trackEvent("view_project", { id: id });
     setId(id);
   };
 
