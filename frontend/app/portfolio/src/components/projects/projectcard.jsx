@@ -9,6 +9,7 @@ import { motion } from "motion/react";
 import OpenInFullIcon from "@mui/icons-material/OpenInFull";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { IconButton } from "@mui/material";
+import { trackEvent } from "../../analytics/trackEvent";
 
 function ProjectCard({ proj, handleViewMore }) {
   return (
@@ -46,7 +47,16 @@ function ProjectCard({ proj, handleViewMore }) {
         </Typography>
       </CardContent>
       <CardActions sx={{ alignItems: "center", justifyContent: "center" }}>
-        <a href={proj.link} target="_blank">
+        <a
+          href={proj.link}
+          target="_blank"
+          onClick={() =>
+            trackEvent("project_link_clicked", {
+              project_id: proj.id,
+              project_title: proj.title,
+            })
+          }
+        >
           <IconButton>
             <GitHubIcon></GitHubIcon>
           </IconButton>
@@ -67,7 +77,7 @@ function ProjectCardMoreInfo({ proj }) {
         maxWidth: 800,
         overflowY: "auto",
         maxHeight: "calc(100vh - 40px)",
-        cursor: "pointer"
+        cursor: "pointer",
       }}
       layout
       layoutId={proj.id}
@@ -92,9 +102,7 @@ function ProjectCardMoreInfo({ proj }) {
             }}
           ></CardMedia>
           {proj.extendedInfo.map((info) => (
-            <Typography variant="body1">
-              {info}
-            </Typography>
+            <Typography variant="body1">{info}</Typography>
           ))}
           <Box
             sx={{
@@ -105,11 +113,7 @@ function ProjectCardMoreInfo({ proj }) {
             }}
           >
             {proj.chips.map((chip) => (
-              <Chip
-                label={chip}
-                color="success"
-                component={motion.div}
-              />
+              <Chip label={chip} color="success" component={motion.div} />
             ))}
           </Box>
         </CardContent>
