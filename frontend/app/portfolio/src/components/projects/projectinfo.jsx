@@ -61,7 +61,7 @@ export const projectsInfo = [
     date: "2025",
     description:
       "Telemetry system for continous temperature and humidity monitoring",
-    link: "https://a9mansoo.github.io/Arduino/projects/temperature_humidity_sensor/",
+    link: "https://a9mansoo.github.io/Real-Time-Humidity-Temperature-Visualizer/projects/temperature_humidity_sensor/",
     getImageSrc: () => iotImg,
     extendedInfo: [
       "• Engineered a full-stack IoT telemetry system to monitor apartment humidity/temperature, integrating hardware (Arduino + DHT22  sensor), a custom distributable Python serial reader cli, and a metrics pipeline.",
