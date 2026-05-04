@@ -13,6 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useEffect, useState } from "react";
 import { menuLinks } from "./menuinfo";
 import * as Icons from "@mui/icons-material";
+import { trackEvent } from "../../analytics/trackEvent";
 
 function PageMenu({ positionY, setTheme, checked }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,7 +21,7 @@ function PageMenu({ positionY, setTheme, checked }) {
   const menuItems = [
     { id: 1, label: "Home", link: "/home" },
     { id: 2, label: "Career", link: "/career" },
-    { id: 3, label: "Certifications", link: "/certifications"},
+    { id: 3, label: "Certifications", link: "/certifications" },
     { id: 4, label: "Projects", link: "/projects" }
   ];
   const theme = useTheme();
@@ -114,7 +115,7 @@ function PageMenu({ positionY, setTheme, checked }) {
             let Icon = Icons[item.icon];
             return (
               <Tooltip title={item.tooltip} key={item.id}>
-                <a href={item.link} target="_blank">
+                <a href={item.link} target="_blank" onClick={() => trackEvent("ext_link", { ext_link_name: item.link })}>
                   <IconButton color="secondary">
                     <Icon />
                   </IconButton>
