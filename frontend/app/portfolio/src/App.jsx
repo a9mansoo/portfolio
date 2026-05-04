@@ -22,6 +22,15 @@ function App() {
   }, [pathname]);
 
   useEffect(() => {
+        if (!window.gtag) {
+            return;
+        }
+        window.gtag("event", "page_view", {
+            page_path: pathname,
+        });
+    }, [pathname])
+
+  useEffect(() => {
     const handleScrollY = () => {
       let posY = window.scrollY > currScroll.current ? -200 : 0;
       currScroll.current = window.scrollY;
