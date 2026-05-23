@@ -5,6 +5,7 @@ import {
   Typography,
   Box,
   Paper,
+  Link
 } from "@mui/material";
 import { certificationsInfo } from "./certificationsinfo";
 import { motion } from "motion/react";
@@ -29,20 +30,42 @@ function CertificationsList() {
       <Typography variant="h4" sx={{ ml: 1 }}>
         Certifications
       </Typography>
-      <List>
+      <List sx={{ width: "100%", maxWidth: 700 }}>
         {certificationsInfo.map((cert) => {
           return (
             <ListItem key={cert.id}>
               <Paper
                 elevation={2}
                 sx={{
-                  p: 2,
+                  width: "100%",
+                  p: 3,
+                  borderRadius: 3,
                 }}
               >
-                <ListItemText
-                  primary={cert.name}
-                  secondary={cert.date}
-                ></ListItemText>
+                <Typography variant="h6">
+                  {cert.name}
+                </Typography>
+
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{ mb: 1 }}
+                >
+                  Issued: {cert.date}
+                </Typography>
+
+                <Typography sx={{ mb: 1 }}>
+                  Score: {cert.score}%
+                </Typography>
+
+                <Link
+                  href={cert.credly}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  underline="hover"
+                >
+                  View Credential
+                </Link>
               </Paper>
             </ListItem>
           );
