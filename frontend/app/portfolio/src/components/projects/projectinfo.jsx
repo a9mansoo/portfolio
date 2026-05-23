@@ -4,8 +4,29 @@ import cellImg from "../../assets/cell_detection.png";
 import passwordManagerImg from "../../assets/pm.png";
 import WatoplyImg from "../../assets/watoply.png";
 import aiAnimeRecommender from "../../assets/ai_anime_recommender.png"
+import prObvsDashboard from "../../assets/pr_observability_dashboard.png"
 
 export const projectsInfo = [
+  {
+    id: 7,
+    title: "PR Observability Dashboard",
+    date: "2026",
+    description: "A lightweight PR intelligence system.",
+    link: "https://github.com/a9mansoo/pr-observability-dashboard",
+    getImageSrc: () => prObvsDashboard,
+    extendedInfo: [
+      "• Designed a rule-driven PR observability system using GitHub Actions, JavaScript, and Python to classify and surface high-priority pull requests automatically.",
+      "• Designed a schema-validated PR intelligence pipeline that normalizes GitHub API data into deterministic, decision-ready dashboards.",
+      "• Developed a static HTML dashboard that aggregates and categorizes pull requests to improve engineering triage and review visibility.",
+    ],
+    chips: [
+      "Github Actions",
+      "Python",
+      "Javascript",
+      "Ajv",
+      "Jinja2"
+    ],
+  },
   {
     id: 6,
     title: "AI Anime Recommender",
