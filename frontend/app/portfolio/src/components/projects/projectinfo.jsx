@@ -5,8 +5,29 @@ import passwordManagerImg from "../../assets/pm.png";
 import WatoplyImg from "../../assets/watoply.png";
 import aiAnimeRecommender from "../../assets/ai_anime_recommender.png"
 import prObvsDashboard from "../../assets/pr_observability_dashboard.png"
+import kubernetesDemo from "../../assets/kubernetes_demo.png"
 
 export const projectsInfo = [
+  {
+    id: 8,
+    title: "CI/CD Pipeline Demo with Kubernetes",
+    date: "2026",
+    description: "CI/CD Pipeline showcasing automated build, test, and deployment to Kubernetes.",
+    link: "https://github.com/a9mansoo/kubernetes-app-demo",
+    getImageSrc: () => kubernetesDemo,
+    extendedInfo: [
+      "• Engineered a CI/CD pipeline using GitHub Actions to automate build, test, and deployment of a sample application to a Kubernetes cluster.",
+      "• Implemented building of docker images, unit testing and code coverage metrics reporting on each pull request using Github Actions.",
+      "• Automated deployment to Kubernetes cluster (minikube) using different environments using kustomize, demonstrating seamless integration of CI/CD practices with container orchestration.",
+    ],
+    chips: [
+      "Github Actions",
+      "FastAPI",
+      "React",
+      "Docker",
+      "Kubernetes"
+    ],
+  },
   {
     id: 7,
     title: "PR Observability Dashboard",
